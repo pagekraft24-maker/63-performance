@@ -1,0 +1,8 @@
+{
+  "name": "63-performance-site",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "nodemailer": "^6.9.16"
+  }
+}

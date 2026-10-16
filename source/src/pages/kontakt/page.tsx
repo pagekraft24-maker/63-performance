@@ -50,7 +50,7 @@ export default function KontaktPage() {
     setFormState('submitting');
 
     try {
-      const response = await fetch('https://readdy.ai/api/form/d923vi7efssur58kqrmg', {
+      const response = await fetch('/api/kontakt?form=kontakt-seite', {
         method: 'POST',
         body: new URLSearchParams(formData as any),
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -207,7 +207,7 @@ export default function KontaktPage() {
             ) : (
               <form
                 id="kontakt-form"
-                data-readdy-form="d923vi7efssur58kqrmg"
+               
                 onSubmit={handleSubmit}
                 className="space-y-6"
               >

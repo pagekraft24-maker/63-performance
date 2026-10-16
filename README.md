@@ -10,3 +10,8 @@ Statische HTML-Website (von Readdy migriert). Vercel liefert ausschließlich den
 1. In `source/` ändern, `npm install && npm run build`
 2. Medien: `source/public/media` → Symlink/Kopie von `site/media` vor dem Build
 3. `node scripts/prerender.mjs source/out site` und `python3 scripts/gen.py site`
+
+## Formulare → E-Mail (eigener Mailserver)
+Alle Formulare senden an `/api/kontakt` (Vercel-Funktion, `api/kontakt.js`), die per SMTP über das INWX-Postfach verschickt.
+Benötigte Environment Variables in Vercel (Settings → Environment Variables):
+`SMTP_HOST`, `SMTP_PORT` (465), `SMTP_USER` (info@63-performance.de), `SMTP_PASS`, optional `MAIL_TO`.

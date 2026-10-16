@@ -90,7 +90,7 @@ export default function TermineSection() {
     setFormError('');
 
     try {
-      const response = await fetch('https://readdy.ai/api/form/d96dmisut53jbls7kmug', {
+      const response = await fetch('/api/kontakt?form=termin', {
         method: 'POST',
         body: new URLSearchParams(fd as any),
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -186,7 +186,7 @@ export default function TermineSection() {
           ) : (
             <form
               id="termin-form"
-              data-readdy-form="d96dmisut53jbls7kmug"
+             
               onSubmit={handleSubmit}
               onKeyDown={(e) => {
                 // Enter in Input-Feldern: nicht submitten, sondern nächster Schritt

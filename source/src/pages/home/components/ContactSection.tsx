@@ -43,7 +43,7 @@ export default function ContactSection() {
     });
 
     try {
-      const res = await fetch('https://readdy.ai/api/form/d920cdvefssur58kqqe0', {
+      const res = await fetch('/api/kontakt?form=kontakt', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: payload.toString(),
@@ -86,7 +86,7 @@ export default function ContactSection() {
           {/* Left: Form */}
           <div>
             <form
-              data-readdy-form
+              
               id="kontakt-formular"
               onSubmit={handleSubmit}
               className="space-y-5"

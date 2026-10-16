@@ -54,10 +54,11 @@ export default function WiderrufFormPage() {
     }
 
     try {
-      const payload = new FormData(form);
-      const response = await fetch('https://readdy.ai/api/form/d96dvmnpg5pqhofcunu0', {
+      const payload = new URLSearchParams(new FormData(form) as any);
+      const response = await fetch('/api/kontakt?form=widerruf', {
         method: 'POST',
         body: payload,
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       });
       const responseText = await response.text();
       let parsed;
@@ -150,7 +151,7 @@ export default function WiderrufFormPage() {
 
             <form
               id="widerruf-form"
-              data-readdy-form
+              
               onSubmit={handleSubmit}
               className="space-y-6"
             >
