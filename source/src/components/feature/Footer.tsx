@@ -28,7 +28,7 @@ export default function Footer() {
           <div>
             <div className="mb-5">
               <span className="sr-only" itemProp="name">63-Performance</span>
-              <img
+              <img loading="lazy" decoding="async"
                 src="/media/logo-large-2cc5d2.webp"
                 alt="63-Performance Logo"
                 className="h-10 w-auto object-contain brightness-0 invert mb-3"

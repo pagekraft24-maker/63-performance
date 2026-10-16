@@ -65,7 +65,7 @@ export default function VehicleConfigurator() {
       <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-white/40 to-transparent" />
 
       <div className="absolute inset-0">
-        <img
+        <img loading="lazy" decoding="async"
           src="/media/generated-image-july-19-2026-12-38pm-86338d.webp"
           alt=""
           className="absolute inset-0 w-full h-full object-cover object-center"

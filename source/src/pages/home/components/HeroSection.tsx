@@ -11,10 +11,23 @@ export default function HeroSection() {
       video.play().catch(() => {});
     };
 
-    playVideo();
+    // Video erst nach dem Laden der Seite nachladen – das Vorschaubild erscheint sofort
+    let started = false;
+    const startVideo = () => {
+      if (started) return;
+      started = true;
+      if (!video.currentSrc) {
+        video.src = window.matchMedia('(max-width: 1024px)').matches ? '/media/hero-video-720.mp4' : '/media/hero-video.mp4';
+      }
+      playVideo();
+    };
+    const startTimer = window.setTimeout(startVideo, 2500);
+    if (document.readyState === 'complete') window.setTimeout(startVideo, 300);
+    else window.addEventListener('load', () => window.setTimeout(startVideo, 300), { once: true });
 
     // Safari fallback: retry on first user interaction
     const onInteraction = () => {
+      startVideo();
       playVideo();
       document.removeEventListener('touchstart', onInteraction);
       document.removeEventListener('click', onInteraction);
@@ -23,6 +36,7 @@ export default function HeroSection() {
     document.addEventListener('click', onInteraction, { once: true });
 
     return () => {
+      window.clearTimeout(startTimer);
       document.removeEventListener('touchstart', onInteraction);
       document.removeEventListener('click', onInteraction);
     };
@@ -34,14 +48,13 @@ export default function HeroSection() {
       <div className="absolute inset-0">
         <video
           ref={videoRef}
-          src="/media/hero-video.mp4"
           poster="/media/hero-poster.webp"
           autoPlay
           loop
           muted
           playsInline
           disableRemotePlayback
-          preload="auto"
+          preload="none"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background-900/40 via-background-900/25 to-background-900/55" />

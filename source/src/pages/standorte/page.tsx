@@ -104,7 +104,7 @@ export default function StandortePage() {
                 >
                   {/* Image */}
                   <div className="relative h-56 md:h-64 lg:h-auto lg:w-[45%] lg:min-h-[380px] overflow-hidden flex-shrink-0">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={location.image}
                       alt={location.name}
                       className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
@@ -217,7 +217,7 @@ export default function StandortePage() {
                 className="group relative rounded-lg overflow-hidden border border-background-300/20 hover:border-primary-400/50 transition-all duration-500 cursor-pointer"
               >
                 <div className="relative h-64 overflow-hidden">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src="/media/region-frankfurt-63-7682e4.webp"
                     alt="Chiptuning Frankfurt am Main"
                     className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
@@ -241,7 +241,7 @@ export default function StandortePage() {
                 className="group relative rounded-lg overflow-hidden border border-background-300/20 hover:border-primary-400/50 transition-all duration-500 cursor-pointer"
               >
                 <div className="relative h-64 overflow-hidden">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src="/media/region-offenbach-63-c8f5ab.webp"
                     alt="Chiptuning Offenbach am Main"
                     className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
@@ -272,7 +272,7 @@ export default function StandortePage() {
               {/* Image */}
               <div className="relative order-2 lg:order-1">
                 <div className="relative rounded-lg overflow-hidden border border-background-300/20">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src="/media/standorte-termin-63-e3e1a4.webp"
                     alt="Terminbuchung bei 63-Performance"
                     className="w-full h-auto object-cover object-center"

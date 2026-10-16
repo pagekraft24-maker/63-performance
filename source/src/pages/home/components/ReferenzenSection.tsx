@@ -106,7 +106,7 @@ export default function ReferenzenSection() {
                 className="group relative rounded-lg overflow-hidden border transition-all duration-500 card-elevated hover:border-primary-400/50 flex-shrink-0 w-[260px] sm:w-[300px] md:w-[320px] snap-center"
               >
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={ref.img}
                     alt={`${ref.name} – Referenzfahrzeug bei 63-Performance Chiptuning`}
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
@@ -180,7 +180,7 @@ export default function ReferenzenSection() {
               </div>
             ) : activeRef.type === 'photo' ? (
               <div className="relative w-full max-h-[80vh] flex items-center justify-center bg-background-900">
-                <img
+                <img loading="lazy" decoding="async"
                   src={activeRef.img}
                   alt={`${activeRef.name} – Referenzfahrzeug bei 63-Performance Chiptuning`}
                   className="max-w-full max-h-[80vh] object-contain rounded-lg"

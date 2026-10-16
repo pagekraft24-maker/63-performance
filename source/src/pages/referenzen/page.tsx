@@ -163,7 +163,7 @@ export default function ReferenzenPage() {
                     className="group relative rounded-lg overflow-hidden border transition-all duration-500 card-elevated hover:border-primary-400/50 flex-shrink-0 w-[260px] sm:w-[300px] md:w-[320px] snap-center"
                   >
                     <div className="aspect-[4/3] overflow-hidden">
-                      <img
+                      <img loading="lazy" decoding="async"
                         src={ref.img}
                         alt={`${ref.name} – Referenzfahrzeug bei 63-Performance Chiptuning`}
                         className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
@@ -233,7 +233,7 @@ export default function ReferenzenPage() {
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
               {galleryImages.map((img, i) => (
                 <div key={i} className="group relative overflow-hidden rounded-lg cursor-pointer aspect-square">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={img.src}
                     alt={`${img.label} – 63-Performance Chiptuning Galerie`}
                     title={`${img.label} – Chiptuning Referenzprojekt von 63-Performance in Seligenstadt`}

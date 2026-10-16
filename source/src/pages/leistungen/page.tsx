@@ -266,7 +266,7 @@ export default function LeistungenPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 <div className="relative rounded-lg overflow-hidden bg-background-800 p-6 flex items-center justify-center cursor-zoom-in group/img" onClick={() => setZoomedImg(selected.detailImg)}>
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={selected.detailImg}
                     alt={`${selected.title} Detail`}
                     className="w-full h-full object-contain max-h-[300px] group-hover/img:scale-105 transition-transform duration-300"
@@ -335,7 +335,7 @@ export default function LeistungenPage() {
           >
             <div className="absolute inset-0 bg-black/90 backdrop-blur-md" />
             <div className="relative max-w-[90vw] max-h-[90vh] flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
-              <img
+              <img loading="lazy" decoding="async"
                 src={zoomedImg}
                 alt="Vergrößerte Detailansicht"
                 className="max-w-full max-h-[90vh] object-contain rounded-lg"

@@ -22,7 +22,10 @@ for (const r of routes) {
       s.remove();
     });
     document.querySelectorAll('iframe').forEach(f => { if (!/google\.com\/maps|maps\.google/.test(f.getAttribute('src')||'')) f.remove(); });
-    // ensure module script stays in head
+    document.querySelectorAll('video[poster]').forEach(v => { v.removeAttribute('src'); });
+    // React-SSR-Format: zwischen benachbarten Textknoten <!-- --> einfügen (für Hydration)
+    const walk = (n) => { for (let c = n.firstChild; c; c = c.nextSibling) { if (c.nodeType === 3 && c.nextSibling && c.nextSibling.nodeType === 3) { n.insertBefore(document.createComment(''), c.nextSibling); } else if (c.nodeType === 1) walk(c); } };
+    walk(document.getElementById('root'));
     return '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
   });
   const name = r === '/' ? 'index.html' : r === '/__404' ? '404.html' : r.slice(1) + '.html';

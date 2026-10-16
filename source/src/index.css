@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --font-heading: 'Montserrat', 'Archivo Black', sans-serif;
+  --font-heading: 'Montserrat', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-label: 'Manrope', sans-serif;
 

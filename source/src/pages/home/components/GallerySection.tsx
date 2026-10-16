@@ -57,7 +57,7 @@ export default function GallerySection() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
           {galleryImages.map((img, i) => (
             <div key={i} className="group relative overflow-hidden rounded-lg cursor-pointer aspect-[4/3]">
-              <img
+              <img loading="lazy" decoding="async"
                 src={img.src}
                 alt={img.label}
                 className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"

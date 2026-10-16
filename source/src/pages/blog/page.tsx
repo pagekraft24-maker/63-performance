@@ -86,7 +86,7 @@ export default function BlogPage() {
                   className="group flex flex-col rounded-xl overflow-hidden border border-background-300/30 bg-background-700/50 hover:border-primary-400/60 transition-all duration-300 cursor-pointer"
                 >
                   <div className="relative aspect-[16/9] overflow-hidden bg-background-800">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={post.image}
                       alt={post.title}
                       title={`${post.title} | Chiptuning 63-Performance`}
